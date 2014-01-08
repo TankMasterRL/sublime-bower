@@ -36,6 +36,6 @@ class API():
             responseText = response.read()
 
         try:
-            return json.loads(responseText.decode())
+            return json.loads(str(responseText), 'utf-8')
         except:
             sublime.error_message('Oh Snap! It looks like theres an error with the Bower API.')
